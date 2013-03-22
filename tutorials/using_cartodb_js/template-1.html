@@ -1,0 +1,43 @@
+<html>
+<head>
+  <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.css" />
+	<script src="http://libs.cartocdn.com/cartodb.js/v2/cartodb.js"></script>
+	<style>
+	html, body {padding: 0; margin: 0;}
+	#cartodb-map { width: 100%; height:100%; background: black;}
+	</style>
+	<script>
+  var map;
+  function init(){
+	// initiate leaflet map
+	map = new L.Map('cartodb-map', { 
+	  center: [0,0],
+	  zoom: 2
+	})
+
+	L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.jpg', {
+					attribution: 'Stamen',
+					subdomains: ['a', 'b', 'c', 'd']
+	}).addTo(map);
+
+	var layerUrl = 'http://skipperkongen.cartodb.com/api/v1/viz/14255/viz.json'
+
+	var layerOptions = {
+		query: "SELECT * FROM {{table_name}} where adm0_a3 = 'USA'",
+		tile_style: "#{{table_name}}{marker-fill: red; marker-width: 14; marker-line-color: white; marker-line-width: 3;}"
+	}
+
+	cartodb.createLayer(map, layerUrl, layerOptions)
+	 .on('done', function(layer) {
+	  map.addLayer(layer);
+	}).on('error', function() {
+	  //log the error
+	});
+
+  }
+	</script>
+</head>
+<body onload="init()">
+  <div id='cartodb-map'></div>
+</body>
+</html>

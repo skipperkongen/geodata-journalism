@@ -46,25 +46,16 @@ Vælg "Map" tab, og under CSS menu indtaster du følgende:
   line-width: 1;
   polygon-opacity: 0.8;
 }
-#world_borders [ km_rivers <= 91913.7015549117] {
-   polygon-fill: #B10026;
+#world_borders [ km_rivers <= 91914] {
+   polygon-fill: #F03B20;
 }
-#world_borders [ km_rivers <= 3772.51105107822] {
-   polygon-fill: #E31A1C;
-}
-#world_borders [ km_rivers <= 2579.03674063611] {
-   polygon-fill: #FC4E2A;
-}
-#world_borders [ km_rivers <= 1831.83830679438] {
+#world_borders [ km_rivers <= 48219] {
    polygon-fill: #FD8D3C;
 }
-#world_borders [ km_rivers <= 1186.54901880401] {
-   polygon-fill: #FEB24C;
+#world_borders [ km_rivers <= 20767] {
+   polygon-fill: #FECC5C;
 }
-#world_borders [ km_rivers <= 711.278107065951] {
-   polygon-fill: #FED976;
-}
-#world_borders [ km_rivers <= 357.937058658957] {
+#world_borders [ km_rivers <= 4120] {
    polygon-fill: #FFFFB2;
 }
 ```

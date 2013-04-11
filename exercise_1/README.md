@@ -5,9 +5,9 @@
 Log ind på CartoDB
 
 Opret to tabeller via "common data" menuen:
-    * Opret en “world borders” tabel
-    * Opret en “rivers” tabel
 
+1. “world borders”
+2. “rivers”
 
 Vælg world border tabellen. Klik på SQL og indtast følgende:
 

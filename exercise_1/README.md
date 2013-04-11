@@ -54,4 +54,7 @@ Vælg "Map" tab, og under CSS menu indtaster du følgende:
 }
 ```
 
+## Spørgsmål
 
+1. Hvordan blev `num_rivers` kolonnen skabt?
+2. Hvad gør den CSS du indtastede?

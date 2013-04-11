@@ -1,8 +1,10 @@
 # Øvelse 2: Projektioner
 
+I denne øvelse vil vi transformere data fra en projektion til en anden. Hvorfor gør vi det? Data gøres tilgængelig i alle mulige forskellige projektioner. Nogle systemer håndterer kun nogle af  disse, så der kan opstå problemer ved import hvis data ikke reprojiceres.
+
 ## Del 1
 
-Transformation af et enkelt punkt
+Lad os prøve transformation af en enkelt punkt-feature (repræsenterer placeringen af Ekstrabladet)
 
 ### 1: Download data: 
 

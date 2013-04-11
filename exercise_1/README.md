@@ -1,6 +1,6 @@
 # Øvelse 1: simpel analyse
 
-## Antal floder per land
+## Kort: Verdens lande farvelagt efter antal floder der løber igennem dem
 
 Log ind på CartoDB
 

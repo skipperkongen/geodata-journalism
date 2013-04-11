@@ -2,7 +2,7 @@
 
 I denne øvelse vil vi lave et kort over verdens lande. Kortet viser noget om hvor mange floder der er i hvert land.
 
-![floder per lang]()
+![floder per lang](https://raw.github.com/skipperkongen/geodata-journalism/master/exercise_1/floder_per_land.png)
 
 ## Opret Kort
 

@@ -8,7 +8,7 @@ Lad os prøve transformation af en enkelt punkt-feature (repræsenterer placerin
 
 ### 1: Download data: 
 
-Download noget data fra CartoDB:
+Download Ekstrabladets placering fra CartoDB:
 
 ```
 curl -o ekstrabladet_4326.json 'https://skipperkongen.cartodb.com/api/v2/sql?format=GeoJSON&q=select+*+FROM+generisk_geodata+WHERE+name=%27Ekstrabladet%27'

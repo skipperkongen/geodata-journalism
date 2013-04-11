@@ -2,6 +2,14 @@
 
 I denne øvelse vil vi transformere data fra en projektion til en anden. Hvorfor gør vi det? Data gøres tilgængelig i alle mulige forskellige projektioner (det offentlige Danmark deler typisk data i den "danske" projektion EPSG:25832). Nogle systemer håndterer kun nogle af  disse, så der kan opstå problemer ved import hvis data ikke reprojiceres først.
 
+Følgende angiver samme sted på jorden (Rådhuspladsen):
+
+```python
+(724349.775302884, 6175905.3508779) # Den danske stat
+(1399102.1714033, 7494384.2880911) # Google
+(12.5683486461639, 55.6770097095364) # Longitude/Latitude
+```
+
 ## Del 1: Opvarmning
 
 Reprojektion af en enkelt punkt-feature (placeringen af Ekstrabladet)

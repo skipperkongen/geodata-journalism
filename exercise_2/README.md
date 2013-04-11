@@ -2,7 +2,7 @@
 
 ## 1: Download data: 
 
-Download data fra CartoDB:
+Download noget data fra CartoDB:
 
 ```
 curl -o ekstrabladet_4326.json 'https://skipperkongen.cartodb.com/api/v2/sql?format=GeoJSON&q=select+*+FROM+generisk_geodata+WHERE+name=%27Ekstrabladet%27'

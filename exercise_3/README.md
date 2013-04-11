@@ -1,6 +1,6 @@
 # Øvelse 1: simpel analyse
 
-I denne øvelse vil vi lave et kort over verdens lande. Kortet viser om der er mange eller få floder i et land. Lad som om det er mord, så det bliver lidt mere spændende.
+I denne øvelse vil vi lave et kort over verdens lande. [Kortet](http://cdb.io/120RphH) viser om der er mange eller få floder i et land. Lad som om det er mord, så det bliver lidt mere spændende.
 
 ![floder per lang](https://raw.github.com/skipperkongen/geodata-journalism/master/exercise_3/floder_per_land.png)
 

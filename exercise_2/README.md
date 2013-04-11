@@ -1,8 +1,8 @@
 # Øvelse 2: Projektioner
 
-I denne øvelse vil vi transformere data fra en projektion til en anden. Hvorfor gør vi det? Data gøres tilgængelig i alle mulige forskellige projektioner. Nogle systemer håndterer kun nogle af  disse, så der kan opstå problemer ved import hvis data ikke reprojiceres.
+I denne øvelse vil vi transformere data fra en projektion til en anden. Hvorfor gør vi det? Data gøres tilgængelig i alle mulige forskellige projektioner (det offentlige Danmark deler typisk data i den "danske" projektion EPSG:25832). Nogle systemer håndterer kun nogle af  disse, så der kan opstå problemer ved import hvis data ikke reprojiceres først.
 
-## Del 1
+## Del 1: Opvarmning
 
 Lad os prøve transformation af en enkelt punkt-feature (repræsenterer placeringen af Ekstrabladet)
 
@@ -29,7 +29,7 @@ ogr2ogr -f "GeoJSON" ekstrabladet_3857.json -s_srs "EPSG:4326" -t_srs "EPSG:3857
 
 Sammenlign indholdet af de to filer
 
-## Del 2
+## Del 2: Transformation af et helt datasæt
 
 Importer offentlige danske data ind i CartoDB.
 

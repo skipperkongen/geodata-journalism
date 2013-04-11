@@ -2,7 +2,7 @@
 
 **Problem**: Vi har en tekst-fil (CSV) med adresser på Apple-shops nær København. Vi vil gerne have en geodata fil (GeoJSON), som vi kan bruge til at vise butikkerne på et kort.
 
-Data:
+Data i CSV-fil:
 
 ```csv
 "APPLE_SHOP","ADRESSE"

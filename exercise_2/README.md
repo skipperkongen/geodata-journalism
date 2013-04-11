@@ -29,7 +29,11 @@ Brug `ogr2ogr` til at transformere koordinaterne fra Lat/Long til Google projekt
 ogr2ogr -f "GeoJSON" ekstrabladet_3857.json -s_srs "EPSG:4326" -t_srs "EPSG:3857" ekstrabladet_4326.json 
 ```
 
-Sammenlign indholdet af de to filer
+Sammenlign indholdet af de to filer:
+
+```
+cat ekstrabladet_4326.json | python -mjson.tool; cat ekstrabladet_3857.json | python -mjson.tool
+```
 
 ## Del 2: Transformation af et helt datasæt
 

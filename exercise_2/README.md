@@ -1,61 +1,67 @@
-# Øvelse 2: Projektioner
+# Øvelse 1: simpel analyse
 
-I denne øvelse vil vi transformere data fra en projektion til en anden. Hvorfor gør vi det? Data gøres tilgængelig i alle mulige forskellige projektioner (det offentlige Danmark deler typisk data i den "danske" projektion EPSG:25832). Nogle systemer håndterer kun nogle af  disse, så der kan opstå problemer ved import hvis data ikke reprojiceres først.
+I denne øvelse vil vi lave et kort over verdens lande. Kortet viser noget om hvor mange floder der er i hvert land.
 
-## Del 1: Opvarmning
+![floder per lang](https://raw.github.com/skipperkongen/geodata-journalism/master/exercise_1/floder_per_land.png)
 
-Reprojektion af en enkelt punkt-feature (placeringen af Ekstrabladet)
+## Opret Kort
 
-### 1: Download data: 
+Log ind på CartoDB
 
-Download Ekstrabladets placering fra CartoDB:
+Opret to tabeller via "common data" menuen:
 
-```
-curl -o ekstrabladet_4326.json 'https://skipperkongen.cartodb.com/api/v2/sql?format=GeoJSON&q=select+*+FROM+generisk_geodata+WHERE+name=%27Ekstrabladet%27'
-```
+1. “world borders”
+2. “rivers”
 
-### 2: Se på data
+Skift navne så tabellerne hedder "world_borders" og "rivers")
 
-* Kig på data i filen ekstrabladet_4326_.json (formattet er GeoJSON)
-* Bid mærke i koordinaterne
+Vælg "world_border" tabellen
 
-**Hint**: `cat ekstrabladet_4326.json | python -mjson.tool`
+Klik på SQL (se til højre under "Table" tab) og indtast følgende:
 
-### 3: Skift projektion
-
-Brug `ogr2ogr` til at transformere koordinaterne fra Lat/Long til Google projektion:
-
-```
-ogr2ogr -f "GeoJSON" ekstrabladet_3857.json -s_srs "EPSG:4326" -t_srs "EPSG:3857" ekstrabladet_4326.json 
+```sql
+SELECT
+	b.*,
+	(SELECT count(*) FROM rivers r where st_intersects(r.the_geom,b.the_geom)) AS num_rivers 
+FROM world_borders b
 ```
 
-Sammenlign indholdet af de to filer:
+Vælg "Map" tab, og under CSS menu indtaster du følgende:
 
+```css
+#world_borders{
+ line-color: #FFF;
+ line-opacity: 1;
+ line-width: 1;
+ polygon-opacity: 0.8;
+}
+#world_borders [ num_rivers <= 218.0] {
+  polygon-fill: #B10026;
+}
+#world_borders [ num_rivers <= 54.0] {
+  polygon-fill: #E31A1C;
+}
+#world_borders [ num_rivers <= 22.0] {
+  polygon-fill: #FC4E2A;
+}
+#world_borders [ num_rivers <= 17.0] {
+  polygon-fill: #FD8D3C;
+}
+#world_borders [ num_rivers <= 13.0] {
+  polygon-fill: #FEB24C;
+}
+#world_borders [ num_rivers <= 9.0] {
+  polygon-fill: #FED976;
+}
+#world_borders [ num_rivers <= 4.0] {
+  polygon-fill: #FFFFB2;
+}
 ```
-cat ekstrabladet_4326.json | python -mjson.tool; cat ekstrabladet_3857.json | python -mjson.tool
-```
 
-## Del 2: Transformation af et helt datasæt
+Klik på "Apply" og se på kortet.
 
-Importer offentlige danske data ind i CartoDB.
 
-### 4: Reprojicer danske kommuner
+## Spørgsmål
 
-Data fra det offentlige Danmark er typisk i projektionen EPSG:25832, f.eks. datasættet [DAGI](http://download.kortforsyningen.dk/content/danmarks-administrative-geografiske-inddeling-1500000) (Danmarks Administrative Geografiske Inddeling). CartoDB fejler hvis man prøver på at importere data i denne projektion (burde den nok ikke, men det gør den).
-
-Derfor vil vi reprojicere til latitude/longitude først.
-
-```
-cd data
-unzip kommune_25832.zip
-ogr2ogr kommune_4326.shp -t_srs "EPSG:4326" kommune_25832.shp
-zip kommune_4326.zip kommune_4326.*
-```
-
-### 5: Upload til CartoDB
-
-Brug upload-formularen ("Create new Table") i CartoDB dashboard til at importere zip fil med kommuner.
-
-### 6: Åben table og se på kort
-
-Hvis du er zoomet helt ud, så zoom ind på Danmark.
+1. Hvad skete der med kortet efter vi indtastede CSS?
+2. Hvordan talte vi antal floder per land?

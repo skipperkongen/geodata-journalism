@@ -1,67 +1,41 @@
-# Øvelse 1: simpel analyse
+# Fra [stuff] til geodata
 
-I denne øvelse vil vi lave et kort over verdens lande. Kortet viser noget om hvor mange floder der er i hvert land.
+**Problem**: Vi har en tekst-fil (CSV) med adresser på Apple-shops nær København. Vi vil gerne have en geodata fil (GeoJSON), som vi kan bruge til at vise butikkerne på et kort.
 
-![floder per lang](https://raw.github.com/skipperkongen/geodata-journalism/master/exercise_1/floder_per_land.png)
+Data:
 
-## Opret Kort
-
-Log ind på CartoDB
-
-Opret to tabeller via "common data" menuen:
-
-1. “world borders”
-2. “rivers”
-
-Skift navne så tabellerne hedder "world_borders" og "rivers")
-
-Vælg "world_border" tabellen
-
-Klik på SQL (se til højre under "Table" tab) og indtast følgende:
-
-```sql
-SELECT
-	b.*,
-	(SELECT count(*) FROM rivers r where st_intersects(r.the_geom,b.the_geom)) AS num_rivers 
-FROM world_borders b
+```csv
+"APPLE_SHOP","ADRESSE"
+"Humac A/S","Åboulevarden 15, 1960 Frederiksberg"
+"Eplehuset A/S","Frederiksborggade 8, 1360 København K"
+"Humac A/S","Gammel Mønt 12, 1117 København K"
+"Humac A/S","Vesterbrogade 12, 1620 København V"
+"Humac A/S","Lyngby Hovedgade 47, 2800 Lyngby"
+"Kullander","Fridhemstorget 1, 21753 Malmö"
+"MStore Malmö","Baltzarsgatan 26, 21136 Malmö"
+"Humac A/S","Slotsarkaderne 1, 3400 Hillerød"
 ```
 
-Vælg "Map" tab, og under CSS menu indtaster du følgende:
+**Løsning**: Brug et Python program til at konvertere adresser i filen til koordinater (bruger Googles geocoding API).
 
-```css
-#world_borders{
- line-color: #FFF;
- line-opacity: 1;
- line-width: 1;
- polygon-opacity: 0.8;
-}
-#world_borders [ num_rivers <= 218.0] {
-  polygon-fill: #B10026;
-}
-#world_borders [ num_rivers <= 54.0] {
-  polygon-fill: #E31A1C;
-}
-#world_borders [ num_rivers <= 22.0] {
-  polygon-fill: #FC4E2A;
-}
-#world_borders [ num_rivers <= 17.0] {
-  polygon-fill: #FD8D3C;
-}
-#world_borders [ num_rivers <= 13.0] {
-  polygon-fill: #FEB24C;
-}
-#world_borders [ num_rivers <= 9.0] {
-  polygon-fill: #FED976;
-}
-#world_borders [ num_rivers <= 4.0] {
-  polygon-fill: #FFFFB2;
-}
+Om programmet:
+
+```
+python csv2geodata.py --help
+Usage: python csv2geodata.py [options] CSV-file
+
+Options:
+  -h, --help            show this help message and exit
+  -l LOCATION_FIELD, --location-field=LOCATION_FIELD
+                        Field in CSV-file containing a location that can be
+                        geocoded, e.g. an address
+  -o OUTPUT, --output=OUTPUT
+                        Filename to write GeoJSON result to, default is
+                        output.json
 ```
 
-Klik på "Apply" og se på kortet.
+Brug programmet på CSV-filen:
 
-
-## Spørgsmål
-
-1. Hvad skete der med kortet efter vi indtastede CSS?
-2. Hvordan talte vi antal floder per land?
+```
+python csv2geodata.py -l ADRESSE -o appleshops.json appleshops.txt
+```

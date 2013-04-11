@@ -65,4 +65,3 @@ Klik på "Apply" og se på kortet.
 
 1. Hvad skete der med kortet efter vi indtastede CSS?
 2. Hvordan talte vi antal floder per land?
-3. Hvad kan vi konkludere ved at se på kortet? (åbent spørgsmål)

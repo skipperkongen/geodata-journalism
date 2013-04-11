@@ -15,7 +15,8 @@
 
 1. Vælg world border tabellen. Klik på SQL og indtast følgende:
     ```
-    SELECT b.*,(select count(*) from rivers r where st_intersects(r.the_geom,b.the_geom)) as num_rivers FROM world_borders b
+    SELECT 
+		b.*,(select count(*) from rivers r where st_intersects(r.the_geom,b.the_geom)) as num_rivers FROM world_borders b
     ```
 2. Vælg "Map" tab, og under CSS menu indtaster du følgende:
     ```

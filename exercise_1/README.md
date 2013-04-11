@@ -1,17 +1,13 @@
 # Øvelse 1: simpel analyse
 
-## Forbered data
+## Antal floder per land
 
-1. Log ind på CartoDB
-2. Opret to tabeller via "common data" menuen:
+Log ind på CartoDB
+
+Opret to tabeller via "common data" menuen:
     * Opret en “world borders” tabel
     * Opret en “rivers” tabel
 
-## Arbejd med data
-
-**Tænk**: Hvordan ville du skrive et SQL query, der for hvert land opgør hvor mange floder der løber igennem landet?
-
-**En løsning**
 
 Vælg world border tabellen. Klik på SQL og indtast følgende:
 

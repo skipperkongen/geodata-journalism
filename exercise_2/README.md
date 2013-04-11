@@ -16,7 +16,8 @@ curl -o ekstrabladet_4326.json 'https://skipperkongen.cartodb.com/api/v2/sql?for
 
 ### 2: Se på data
 
-* Åben fil ekstrabladet_4326_.json i en teksteditor (brug eventuelt http://jsonformatter.curiousconcept.com/ til at formatere indholdet pænt)
+* Åben fil ekstrabladet_4326_.json i en teksteditor (formattet er GeoJSON)
+(brug eventuelt http://jsonformatter.curiousconcept.com/ til at formatere indholdet pænt)
 * Bid mærke i koordinaterne
 
 ### 3: Skift projektion

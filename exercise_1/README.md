@@ -54,7 +54,10 @@ Vælg "Map" tab, og under CSS menu indtaster du følgende:
 }
 ```
 
+Klik på "Apply" og se på kortet.
+
+
 ## Spørgsmål
 
-1. Hvordan blev `num_rivers` kolonnen skabt?
-2. Hvad gør den CSS du indtastede?
+1. Hvad skete der med kortet efter vi indtastede CSS?
+1. Hvordan talte vi antal floder per land?

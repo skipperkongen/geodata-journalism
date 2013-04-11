@@ -8,8 +8,13 @@ Brug ogr2ogr til at lave følgende konverteringer
 
 ## Hints
 
-* [ogr2ogr cheat sheet](https://github.com/dwtkns/gdal-cheat-sheet), "Convert between vector formats"
-* Slå PostGIS til på en database: `create extension postgis;`
+ogr2ogr cheat sheet: https://github.com/dwtkns/gdal-cheat-sheet, søg på "Convert between vector formats"
+
+Slå PostGIS til på en database:
+
+```sql
+create extension postgis;
+```
 
 ogr2ogr har en -sql option hvor man kan vælge de rækker der skal exporteres:
 

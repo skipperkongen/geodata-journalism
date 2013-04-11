@@ -2,6 +2,8 @@
 
 I denne øvelse vil vi lave et kort over verdens lande. Kortet viser noget om hvor mange floder der er i hvert land.
 
+![floder per lang]()
+
 ## Opret Kort
 
 Log ind på CartoDB

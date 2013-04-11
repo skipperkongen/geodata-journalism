@@ -4,7 +4,7 @@ Brug ogr2ogr til at lave følgende konverteringer
 
 1. konverter kommune_4326.shp til kommune.json
 2. importer kommune.json i PostgreSQL
-3. exporter kommuner i øst-danmark fra PostgreSQL til GeoJSON
+3. eksporter kommuner i øst-danmark fra PostgreSQL til GeoJSON
 
 ## Hints
 
@@ -16,7 +16,7 @@ Slå PostGIS til på en database:
 create extension postgis;
 ```
 
-ogr2ogr har en -sql option hvor man kan vælge de rækker der skal exporteres:
+ogr2ogr har en -sql option hvor man kan vælge de rækker der skal eksporteres:
 
 ```
 ogr2ogr -f "GeoJSON" output.geojson \

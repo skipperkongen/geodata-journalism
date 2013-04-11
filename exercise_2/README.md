@@ -4,7 +4,7 @@ I denne øvelse vil vi transformere data fra en projektion til en anden. Hvorfor
 
 ## Del 1: Opvarmning
 
-Lad os prøve transformation af en enkelt punkt-feature (repræsenterer placeringen af Ekstrabladet)
+Lad os prøve transformation af en enkelt punkt-feature (placeringen af Ekstrabladet)
 
 ### 1: Download data: 
 

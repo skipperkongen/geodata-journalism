@@ -9,7 +9,11 @@ Opret to tabeller via "common data" menuen:
 1. “world borders”
 2. “rivers”
 
-Vælg world border tabellen (skift navne så tabellerne hedder "world_borders" og "rivers"). Klik på SQL og indtast følgende:
+Skift navne så tabellerne hedder "world_borders" og "rivers")
+
+Vælg "world_border" tabellen
+
+Klik på SQL (se til højre under "Table" tab) og indtast følgende:
 
 ```sql
 SELECT

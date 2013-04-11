@@ -1,6 +1,8 @@
 # Øvelse 1: simpel analyse
 
-## Kort: Verdens lande farvelagt efter antal floder der løber igennem dem
+I denne øvelse vil vi lave et kort over verdens lande. Kortet viser noget om hvor mange floder der er i hvert land.
+
+## Opret Kort
 
 Log ind på CartoDB
 
@@ -60,4 +62,5 @@ Klik på "Apply" og se på kortet.
 ## Spørgsmål
 
 1. Hvad skete der med kortet efter vi indtastede CSS?
-1. Hvordan talte vi antal floder per land?
+2. Hvordan talte vi antal floder per land?
+3. Hvad kan vi konkludere ved at se på kortet? (åbent spørgsmål)

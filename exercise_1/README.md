@@ -11,7 +11,7 @@
 
 **Tænk**: Hvordan ville du skrive et SQL query, der for hvert land opgør hvor mange floder der løber igennem landet?
 
-**En løsning**s
+**En løsning**
 
 Vælg world border tabellen. Klik på SQL og indtast følgende:
 

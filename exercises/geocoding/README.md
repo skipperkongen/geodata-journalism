@@ -1,10 +1,8 @@
 # Fra [stuff] til geodata
 
-## Øvelse: Geokodning af adresser
+## Øvelse: Geokodning og visualisering af adresser
 
-**Problem**: Lad os sige at vi har fundet en tekst-fil (CSV) med adresser på noget vigtigt (Apple-shops nær København). Vi vil gerne lave en geodata ud af filen, så vi kan vise informationen på et kort, og vi har valgt GeoJSON som vores output format:
-
-Data i [CSV-fil](https://raw.github.com/skipperkongen/geodata-journalism/master/exercises/geocoding/appleshops.txt):
+**Problem**: Du har følgende [CSV-fil](https://raw.github.com/skipperkongen/geodata-journalism/master/exercises/geocoding/appleshops.txt):
 
 ```csv
 "APPLE_SHOP","ADRESSE"
@@ -18,17 +16,19 @@ Data i [CSV-fil](https://raw.github.com/skipperkongen/geodata-journalism/master/
 "Humac A/S","Slotsarkaderne 1, 3400 Hillerød"
 ```
 
-Jeg har skrevet et Python program som kan geokode adresser i en CSV-fil (geokode = omdanne tekst til koordinater). [Kildekoden til programmet](https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/csv2geodata.py) findes i dette repository (og står også længere nede på siden).
+Du vil gerne vise butikkerne på et kort.
 
-Du kan få usage for programmet ved at kalde:
+### Opgave 1: Skab geodata
+
+Python kan geokode adresser f.eks. i en CSV-fil. I dette repository ligger [kildekoden](https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/csv2geodata.py) til et program, som kan bruges til formålet.
+
+Kald [programmet]((https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/csv2geodata.py) med [CSV-filen](https://raw.github.com/skipperkongen/geodata-journalism/master/exercises/geocoding/appleshops.txt) som input, og få en GeoJSON fil ud af det.
+
+Du kan se hvordan programmet bruges ved at kalde:
 
 ```
 python csv2geodata.py --help
 ```
-
-**Opgave 1**:
-Kald [programmet]((https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/csv2geodata.py)) med [CSV-filen](https://raw.github.com/skipperkongen/geodata-journalism/master/exercises/geocoding/appleshops.txt) som input, og få en GeoJSON fil ud af det:
-
 
 **Løsning 1**: 
 
@@ -36,11 +36,20 @@ Kald [programmet]((https://github.com/skipperkongen/geodata-journalism/blob/mast
 python csv2geodata.py -l ADRESSE -o appleshops.json appleshops.txt
 ```
 
-**Opgave 2**: Vis indholdet af GeoJSON filen på et kort i browseren. Til formålet bruger vi javascript biblioteket Leaflet.
 
-**Løsning 2**: Hvis du har oprettet GeoJSON filen (output.json), kan du åbne [map.html](https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/map.html) side i en browser (HTML-filen skal ligge i samme directory som *output.json*, og du skal tilføje `data = ` til starten af *output.json*). Den bør vise et kort med dine adresser.
+### Opgave 2: Visualisering
+
+Brug Javascript biblioteket Leaflet til at vise indholdet af GeoJSON filen på et kort
+
+**Løsning 2**: 
+
+* Tilføj tekst-strengen `data = ` i starten af output.json, som du oprettede i opgave 1.
+* åben [map.html](https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/map.html) side i en browser (HTML-filen skal ligge i samme directory som *output.json*). Du bør vise et kort med butikkerne på.
 
 
+### Opgave 3: Se på koden
+
+Se på koden herunder, og forstå hvad der blev kaldt for at geokode adresserne.
 
 ## Bilag
 

@@ -68,3 +68,42 @@ Klik på "Apply" og se på kortet.
 
 Det du indtastede er en variant af CSS der hedder CartoCSS. Det kan bruges til at style geodata i et kort på forskellige måder.
 
+# Øvelse 2: Spatial joins
+
+Spatial joins i SQL er en vigtig måde at analysere data på. Du kan f.eks. joine to tabeller R og S på følgende måder:
+
+* **Intersects**: Kombinér rækker fra R med rækker fra S hvor de overlapper hinanden
+* **Distance**: Kombinér rækker fra R med rækker fra S, som er indenfor en vis afstand
+
+Vi kan bruge de to tabeller fra før, *rivers* og *world_borders*.
+
+Intersects join (lande sammenstillet med floder der løber igennem landet):
+
+```sql
+SELECT R.name1, S.name 
+FROM rivers AS R 
+JOIN world_borders AS S 
+ON ST_Intersects(r.the_geom, S.the_geom)
+```
+
+Distance join (lande i Afrika som er indenfor en afstand af 500km fra Niger floden):
+
+```sql
+SELECT distinct S.name
+FROM rivers AS R 
+JOIN world_borders AS S 
+ON ST_DWithin(st_transform(st_setsrid(R.the_geom, 4326), 3857), st_transform(st_setsrid(S.the_geom, 4326), 3857), 500000)
+WHERE R.name1='Niger' and S.region=2
+```
+
+Hvis ovenstående distance join skal visualiseres i CartoDB, skal man vælge alle kolonnerne fra S.
+
+```sql
+SELECT distinct S.*
+FROM rivers AS R 
+JOIN world_borders AS S 
+ON ST_DWithin(st_transform(st_setsrid(R.the_geom, 4326), 3857), st_transform(st_setsrid(S.the_geom, 4326), 3857), 500000)
+WHERE R.name1='Niger' and S.region=2
+```
+
+

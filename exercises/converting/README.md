@@ -6,15 +6,23 @@ Brug ogr2ogr til at lave følgende konverteringer
 2. importer kommune.json i PostgreSQL
 3. eksporter kommuner i øst-danmark fra PostgreSQL til en shape fil
 
+Du kan prøve selv med de hints der står herunder, eller hoppe direkte til [løsningerne](https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/converting/solutions.md). 
+
 ## Hints
 
+**Opgave 1**
+
 ogr2ogr cheat sheet: https://github.com/dwtkns/gdal-cheat-sheet, søg på "Convert between vector formats"
+
+**Opgave 2**
 
 Slå PostGIS til på en database:
 
 ```sql
 create extension postgis;
 ```
+
+**Opgave 3**
 
 ogr2ogr har en -sql option hvor man kan vælge de rækker der skal eksporteres:
 

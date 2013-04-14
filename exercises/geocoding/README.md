@@ -38,7 +38,7 @@ python csv2geodata.py -l ADRESSE -o appleshops.json appleshops.txt
 
 **Opgave 2**: Vis indholdet af GeoJSON filen på et kort i browseren. Til formålet bruger vi javascript biblioteket Leaflet.
 
-**Løsning 2**: Hvis du har oprettet GeoJSON filen (output.json), kan du åbne [map.html] side i en browser (HTML-filen skal ligge i samme directory som JSON filen). Den bør vise et kort med dine adresser.
+**Løsning 2**: Hvis du har oprettet GeoJSON filen (output.json), kan du åbne [map.html](https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/map.html) side i en browser (HTML-filen skal ligge i samme directory som *output.json*, og du skal tilføje `data = ` til starten af *output.json*). Den bør vise et kort med dine adresser.
 
 
 

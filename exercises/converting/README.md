@@ -2,7 +2,7 @@
 
 Brug ogr2ogr til at lave følgende konverteringer
 
-1. konverter kommune_4326.shp til kommune.json
+1. konverter kommune_4326.shp til kommune.json (ligger i data mappen)
 2. importer kommune.json i PostgreSQL
 3. eksporter kommuner i øst-danmark fra PostgreSQL til en shape fil
 

@@ -35,7 +35,9 @@ SELECT
 FROM world_borders b
 ```
 
-Vælg "Map" tab, og under CSS menu indtaster du følgende:
+**Opgave 1**: Brug lige et øjeblik på at forstå hvad SQL'en gør.
+
+Vælg "Map" tab, og indtast følgende under CSS menupunktet:
 
 ```css
 /** choropleth visualization */

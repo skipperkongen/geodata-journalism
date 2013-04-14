@@ -1,6 +1,6 @@
 # Konvertering mellem formater
 
-Shape (.shp) og GeoJSON (.json) er to populære formater til geodata. Brug command-line programmet *ogr2ogr* til at lave følgende konverteringer
+Shape (.shp), GeoJSON (.json) og PostgreSQL+PostGIS databaser er alle populære formater for geodata. Brug command-line programmet *ogr2ogr* til at lave følgende konverteringer
 
 1. konverter kommune_4326.shp til kommune.json (ligger i [data](https://github.com/skipperkongen/geodata-journalism/tree/master/exercises/converting/data) mappen)
 2. importer kommune.json i PostgreSQL

@@ -2,7 +2,7 @@
 
 **Problem**: Lad os sige at vi har fundet en tekst-fil (CSV) med adresser på noget vigtigt (Apple-shops nær København). Vi vil gerne lave en geodata ud af filen, så vi kan vise informationen på et kort, og vi har valgt GeoJSON som vores output format:
 
-Data i CSV-fil:
+Data i [CSV-fil](https://raw.github.com/skipperkongen/geodata-journalism/master/exercises/geocoding/appleshops.txt):
 
 ```csv
 "APPLE_SHOP","ADRESSE"
@@ -16,7 +16,7 @@ Data i CSV-fil:
 "Humac A/S","Slotsarkaderne 1, 3400 Hillerød"
 ```
 
-**Løsning**: Brug et Python program til at konvertere adresser i filen til koordinater (bruger Googles geocoding API).
+Brug et [Python program](https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/csv2geodata.py) til at geokode adresser i filen til koordinater:
 
 Om programmet:
 

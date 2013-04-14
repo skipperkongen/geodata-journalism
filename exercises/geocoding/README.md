@@ -1,5 +1,7 @@
 # Fra [stuff] til geodata
 
+## Øvelse: Geokodning af adresser
+
 **Problem**: Lad os sige at vi har fundet en tekst-fil (CSV) med adresser på noget vigtigt (Apple-shops nær København). Vi vil gerne lave en geodata ud af filen, så vi kan vise informationen på et kort, og vi har valgt GeoJSON som vores output format:
 
 Data i [CSV-fil](https://raw.github.com/skipperkongen/geodata-journalism/master/exercises/geocoding/appleshops.txt):
@@ -16,29 +18,31 @@ Data i [CSV-fil](https://raw.github.com/skipperkongen/geodata-journalism/master/
 "Humac A/S","Slotsarkaderne 1, 3400 Hillerød"
 ```
 
-Brug et [Python program](https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/csv2geodata.py) til at geokode adresser i filen til koordinater:
+Jeg har skrevet et Python program som kan geokode adresser i en CSV-fil (geokode = omdanne tekst til koordinater). [Kildekoden til programmet](https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/csv2geodata.py) findes i dette repository (og står også længere nede på siden).
 
-Om programmet:
+Du kan få usage for programmet ved at kalde:
 
 ```
 python csv2geodata.py --help
-Usage: python csv2geodata.py [options] CSV-file
-
-Options:
-  -h, --help            show this help message and exit
-  -l LOCATION_FIELD, --location-field=LOCATION_FIELD
-                        Field in CSV-file containing a location that can be
-                        geocoded, e.g. an address
-  -o OUTPUT, --output=OUTPUT
-                        Filename to write GeoJSON result to, default is
-                        output.json
 ```
 
-Brug programmet på CSV-filen:
+**Opgave 1**:
+Kald [programmet]((https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/csv2geodata.py)) med [CSV-filen](https://raw.github.com/skipperkongen/geodata-journalism/master/exercises/geocoding/appleshops.txt) som input, og få en GeoJSON fil ud af det:
+
+
+**Løsning 1**: 
 
 ```
 python csv2geodata.py -l ADRESSE -o appleshops.json appleshops.txt
 ```
+
+**Opgave 2**: Vis indholdet af GeoJSON filen på et kort i browseren. Til formålet bruger vi javascript biblioteket Leaflet.
+
+**Løsning 2**: Hvis du har oprettet GeoJSON filen (output.json), kan du åbne [map.html] side i en browser (HTML-filen skal ligge i samme directory som JSON filen). Den bør vise et kort med dine adresser.
+
+
+
+## Bilag
 
 Kilde-kode til programmet:
 

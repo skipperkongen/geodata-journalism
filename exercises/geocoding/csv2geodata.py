@@ -21,7 +21,7 @@ def main(location_field, input, output):
 						print "\t%.5f, %.5f" % (lat, lng)
 				# Create GeoJSON feature
 				# pdb.set_trace()
-				ft = geojson.Feature(id=id,geometry=geojson.Point([lat,lng]),properties=row)
+				ft = geojson.Feature(id=id,geometry=geojson.Point([lng,lat]),properties=row)
 				id += 1
 				features.append( ft )
 		except KeyError:

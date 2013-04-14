@@ -29,7 +29,7 @@ Du kan geokode adresser i CSV filen ved hjælp af et Python program ([kildekode]
 python csv2geodata.py -l ADRESSE -o appleshops.json appleshops.txt
 ```
 
-Åben eventuelt filen og se om det ligner GeoJSON.
+Åben eventuelt filen du får ved at køre programmet og se om det ligner GeoJSON.
 
 ### Opgave 2: Visualisering
 

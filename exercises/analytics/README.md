@@ -64,8 +64,7 @@ Vælg "Map" tab, og indtast følgende under CSS menupunktet:
 
 Klik på "Apply" og se på kortet.
 
+**Opgave 2**: Brug lige et øjeblik på at forstå hvad ovenstående CSS gjorde. 
 
-## Spørgsmål
+Det du indtastede er en variant af CSS der hedder CartoCSS. Det kan bruges til at style geodata i et kort på forskellige måder.
 
-1. Hvordan talte du antal floder per land?
-2. Hvad skete der med kortet efter du indtastede CSS?

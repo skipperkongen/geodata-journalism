@@ -1,6 +1,6 @@
 # Fra [stuff] til geodata
 
-**Problem**: Vi har en tekst-fil (CSV) med adresser på Apple-shops nær København. Vi vil gerne have en geodata fil (GeoJSON), som vi kan bruge til at vise butikkerne på et kort.
+**Problem**: Lad os sige at vi har fundet en tekst-fil (CSV) med adresser på noget vigtigt (Apple-shops nær København). Vi vil gerne lave en geodata ud af filen, så vi kan vise informationen på et kort, og vi har valgt GeoJSON som vores output format:
 
 Data i CSV-fil:
 

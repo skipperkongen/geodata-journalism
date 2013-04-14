@@ -2,7 +2,7 @@
 
 I denne øvelse vil vi lave et kort over verdens lande. [Kortet](http://cdb.io/120XA5v) viser hvor mange kilometer flod der er i et land. Lad som om det er mord, så det bliver lidt mere spændende.
 
-![floder per lang](https://raw.github.com/skipperkongen/geodata-journalism/master/exercise_3/floder_per_land.png)
+![floder per lang](https://raw.github.com/skipperkongen/geodata-journalism/master/exercises/analytics/floder_per_land.png)
 
 ## Opret Kort
 

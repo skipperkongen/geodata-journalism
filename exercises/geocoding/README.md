@@ -20,9 +20,7 @@ Du vil gerne vise butikkerne på et kort.
 
 ### Opgave 1: Skab geodata
 
-Du kan geokode adresser i CSV filen ved hjælp af et Python program ([kildekode](https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/csv2geodata.py)), som benytter geokoderne i modulet *geopy*.
-
-Kald [programmet]((https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/csv2geodata.py) med [CSV-filen](https://raw.github.com/skipperkongen/geodata-journalism/master/exercises/geocoding/appleshops.txt) som input, hvilket bør give en GeoJSON fil.
+Du kan geokode adresser i CSV filen ved hjælp af et Python program ([kildekode](https://github.com/skipperkongen/geodata-journalism/blob/master/exercises/geocoding/csv2geodata.py)), som benytter geocoders fra modulet *geopy*:
 
 ```
 # usage: python csv2geodata.py --help

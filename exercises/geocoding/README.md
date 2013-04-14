@@ -1,5 +1,7 @@
 # Fra [stuff] til geodata
 
+Bemærk at alle data og programmer ligger i samme mappe som denne README fil.
+
 ## Øvelse: Geokodning og visualisering af adresser
 
 **Problem**: Du har følgende [CSV-fil](https://raw.github.com/skipperkongen/geodata-journalism/master/exercises/geocoding/appleshops.txt):
